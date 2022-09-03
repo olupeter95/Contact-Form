@@ -8,10 +8,8 @@ $db = $database->getConnection();
 
 $contact = new Contact($db);
 
-echo $_POST['name'];
-
 if(isset($_POST["submit"])){
-     if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message'])){
+    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message'])){
         $contact->name = $_POST['name'];
         $contact->email = $_POST['email'];
         $contact->subject = $_POST['subject'];
@@ -20,10 +18,10 @@ if(isset($_POST["submit"])){
         if($contact->insert()){
             header('location: index.php?success=message sent succesfully');
         }
-     }else{
-         header('location: index.php?error=please fill all field');
-     }
-}else{
+    } else {
+        header('location: index.php?error=please fill all field');
+    }
+} else {
 
     echo "invalid";
 }

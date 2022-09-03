@@ -16,7 +16,7 @@ class Contact
             $stmt = $this->conn->prepare("INSERT INTO {$this->contactTable} 
             (`name`, `email`, `subject`, `message`) VALUES(?,?,?,?)");
             $this->name = htmlspecialchars(strip_tags($this->name));
-			$this->email = htmlspecialchars(strip_tags($this->email));
+            $this->email = htmlspecialchars(strip_tags($this->email));
             $this->subject = htmlspecialchars(strip_tags($this->subject));
             $this->message = htmlspecialchars(strip_tags($this->message));
 
@@ -33,18 +33,16 @@ class Contact
         $result = $stmt->get_result();
         $i = 1;
         if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){ 
-                        
-                    ?>
-                        	<tr>
-									<td><?php echo $i++ ?></td>
-									<td><?php echo $row['name'] ?></td>
-									<td><?php echo $row['email'] ?></td>
-									<td><?php echo $row['subject'] ?></td>
-									<td><?php echo $row['message'] ?></td>
-								</tr>
-                    <?php
-                
+            while($row = $result->fetch_assoc()){                        
+                ?>
+                    <tr>
+                        <td><?php echo $i++ ?></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['email'] ?></td>
+                        <td><?php echo $row['subject'] ?></td>
+                        <td><?php echo $row['message'] ?></td>
+                    </tr>
+                <?php
             }
         }
     }
