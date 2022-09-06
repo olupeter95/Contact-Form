@@ -22,6 +22,5 @@ if(isset($_POST["submit"])){
         header('location: index.php?error=please fill all field');
     }
 } else {
-
     echo "invalid";
 }

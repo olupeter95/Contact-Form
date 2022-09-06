@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Table structure for table `contacts`
 --
 
-CREATE TABLE `contact` (
+CREATE TABLE `contacts` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -40,9 +40,9 @@ CREATE TABLE `contact` (
 --
 
 --
--- Indexes for table `contact`
+-- Indexes for table `contacts`
 --
-ALTER TABLE `contact`
+ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -50,9 +50,9 @@ ALTER TABLE `contact`
 --
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT for table `contacts`
 --
-ALTER TABLE `contact`
+ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 

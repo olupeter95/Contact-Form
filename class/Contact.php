@@ -2,7 +2,7 @@
 
 class Contact
 {
-    private $contactTable = 'contact';
+    private $table = 'contacts';
     private $conn;
 
     public function __construct($db)
@@ -13,7 +13,7 @@ class Contact
     public function insert()
     {
         if($this->name) {
-            $stmt = $this->conn->prepare("INSERT INTO {$this->contactTable} 
+            $stmt = $this->conn->prepare("INSERT INTO {$this->table} 
             (`name`, `email`, `subject`, `message`) VALUES(?,?,?,?)");
             $this->name = htmlspecialchars(strip_tags($this->name));
             $this->email = htmlspecialchars(strip_tags($this->email));
@@ -28,7 +28,7 @@ class Contact
     }
 
     public function view(){
-        $stmt = $this->conn->prepare("SELECT * FROM {$this->contactTable}");
+        $stmt = $this->conn->prepare("SELECT * FROM {$this->table}");
         $stmt->execute();
         $result = $stmt->get_result();
         $i = 1;
